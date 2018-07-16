@@ -19,5 +19,4 @@ addons:
     build_command: "make -j2"
     branch_pattern: master
     
- script:
-    - make && make test
+script: make && make test
