@@ -1,6 +1,7 @@
-language:C++
+language: cpp
 compiler:
    - gcc
+   - clang
 env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
@@ -17,5 +18,5 @@ addons:
       description: "Vampire"
     notification_email: 490436312@qq.com
     build_command_prepend: "./configure"
-    build_command: "make "
+    build_command: "make -j2"
     branch_pattern: master
