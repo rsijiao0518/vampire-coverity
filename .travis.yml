@@ -20,4 +20,4 @@ addons:
     branch_pattern: master
     
  script:
-    - make -j2 
+    - make && make test
