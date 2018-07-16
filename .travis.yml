@@ -17,5 +17,5 @@ addons:
       description: "Vampire"
     notification_email: 490436312@qq.com
     build_command_prepend: "./configure"
-    build_command: "make "
+    build_command: "make -j2"
     branch_pattern: master
