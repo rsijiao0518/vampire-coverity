@@ -83,7 +83,8 @@ namespace Indexing
       }
     }
 
-    while (toVisit.isNonEmpty()) {
+    while (toVisit.isNonEmpty()) 
+    {
       Term *u = toVisit.pop();
       if (env.signature->getFunction(u->functor())->termAlgebraCons()) {
         for (unsigned i = 0; i < u->arity(); i++) {
@@ -120,7 +121,8 @@ namespace Indexing
     bool termAlgebraConsL = l->isTerm() && env.signature->getFunction(l->term()->functor())->termAlgebraCons();
     bool termAlgebraConsR = r->isTerm() && env.signature->getFunction(r->term()->functor())->termAlgebraCons();
     
-    if (!termAlgebraConsL && termAlgebraConsR) {
+    if (!termAlgebraConsL && termAlgebraConsR) 
+    {
       t = l;
       fs = r;
     } else if (termAlgebraConsL && !termAlgebraConsR) {
@@ -133,7 +135,8 @@ namespace Indexing
     return true;
   }
   
-  struct AcyclicityIndex::IndexEntry {
+  struct AcyclicityIndex::IndexEntry 
+  {
   public:
     IndexEntry(Literal *l, Clause *c, TermList t, List<TermList>* subterms) :
       lit(l),
