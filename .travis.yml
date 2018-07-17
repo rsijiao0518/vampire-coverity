@@ -1,0 +1,36 @@
+language: cpp
+compiler:
+   - gcc
+   - clang
+   
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "Mjy0lTGRa8sUi6YPWQJEo+BhWtA0U+36Br2lDh7xN9YYMgKZyJWC6+2lpDxq4GSqOnSETdLzXNwnewveebuQZX9U6WtHkcQWeLOwDq05IrdG5s8uhbq8C6To84di2Cnf0IIFUOhX08VvTwYa7ck4D+2QkfeiTVyssXjhbdr2GqlMaTG/cj9+IsWTNoIH3n/FZMzFkVynSK0qiqBNr0xCeUjOHh3qbgxxsJWMjGm9gp1CYze9oyJ7C3ZJehdFYjjTBlZ+ZxoNnh28jV7/m+c0F0RtHKLwxwNzjnYoyQBqJLi1fTbKqr16jtFBUxIOTHggMG52UY/lyrBOVw1vkmw9y1VG9PWpT+HxE8RM6q35NUkpQN5m6AL2D4C0vmW2rS6AhaX0tt6L9Maa3Y80Zm+0bSdjO9h14R+ICOQnAGV6BC2TFMgWWIH9cD4woBLihfVZtFCQvZA0MG8fZgh56lP67fU3ZrjnZcOTMlpJdfoz90VEdBu46sgomKH+HAjVfMapMG6pfdHPBIPL7/sBqTxtFrADxYzx00aLJfo22UW0rzMq6xsZU3rvucDjC0oD2BD6/JIWt02xixu3bAu8BuOdQNAoQZfznbYt1u+PDt1BVo8u0PVAPcnfdhBj08knR4BnKa1lRoZqOofT7X1H4kpaSqVELw8tKPPOfZPP1toBHQo="
+
+before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+ apt:
+    packages:
+      - cmake
+      - g++-4.8
+      
+  coverity_scan:
+    project:
+      name: "rsijiao0518/vampire-coverity"
+      description: "Vampire"
+    notification_email: 490436312@qq.com
+    build_command_prepend: "cov-configure --comptype gcc --compiler gcc-4.8"
+    build_command:   "make VERBOSE=1"
+branch_pattern: coverity_scan
+
+script:
+  - if [[ "${COVERITY_SCAN_BRANCH}" == 1 ]];
+      then
+        echo "Don't build on coverty_scan branch.";
+        exit 0;
+    fi
+- make
