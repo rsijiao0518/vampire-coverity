@@ -13,18 +13,14 @@ before_install:
   - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
 addons:
- apt:
-    packages:
-      - cmake
-      - g++-4.8
       
   coverity_scan:
     project:
       name: "rsijiao0518/vampire-coverity"
       description: "Vampire"
     notification_email: 490436312@qq.com
-    build_command_prepend: "cov-configure --comptype gcc --compiler gcc-4.8"
-    build_command:   "make VERBOSE=1"
+    build_command_prepend: "./configure"
+    build_command:   "make"
 branch_pattern: coverity_scan
 
 script:
