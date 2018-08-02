@@ -66,3 +66,8 @@ There are some scripts that might be useful. This list can be expanded:
  * dogcov.sh produces coverage data when running vampire_gcov
  * vinter is a front-end script for that tool
  * runner.sh and ltb_mode are scripts that have been used to run vampire in the past
+ 
+ <a href="https://scan.coverity.com/projects/rsijiao0518-vampire-coverity">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/16210/badge.svg"/>
+</a>
