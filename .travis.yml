@@ -21,7 +21,7 @@ addons:
       name: "rsijiao0518/vampire-coverity"
       description: "Vampire"
     notification_email: 490436312@qq.com
-    build_command_prepend: "./configure && make clean"
+    build_command_prepend: "./configure"
     build_command:   "make"
 branch_pattern: coverity_scan
 
