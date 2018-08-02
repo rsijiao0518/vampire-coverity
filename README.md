@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/rsijiao0518/vampire-coverity.svg?branch=coverity_scan)](https://travis-ci.com/rsijiao0518/vampire-coverity)
+
 # Vampire
 
 This is a brief introduction to this repository. Please see <a href="https://vprover.github.io/">the Vampire website</a> for more general information about Vampire. Please see LICENCE for usage restrictions. Note that Vampire makes use of minisat and z3 and some of this code is included in this codebase, such code is provided under their own licence.
@@ -66,3 +68,8 @@ There are some scripts that might be useful. This list can be expanded:
  * dogcov.sh produces coverage data when running vampire_gcov
  * vinter is a front-end script for that tool
  * runner.sh and ltb_mode are scripts that have been used to run vampire in the past
+ 
+ <a href="https://scan.coverity.com/projects/rsijiao0518-vampire-coverity">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/16210/badge.svg"/>
+</a>

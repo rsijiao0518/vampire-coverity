@@ -45,7 +45,7 @@ public:
   inline
   UListLeaf() : _children(0), _size(0) {}
   inline
-  UListLeaf(TermList ts) : Leaf(ts), _children(0), _size(0) {}
+  explicit UListLeaf(TermList ts) : Leaf(ts), _children(0), _size(0) {}
   ~UListLeaf()
   {
     LDList::destroy(_children);
@@ -89,7 +89,7 @@ class SubstitutionTree::SListLeaf
 {
 public:
   SListLeaf() {}
-  SListLeaf(TermList ts) : Leaf(ts) {}
+  explicit SListLeaf(TermList ts) : Leaf(ts) {}
 
   static SListLeaf* assimilate(Leaf* orig);
 
@@ -258,4 +258,4 @@ void SubstitutionTree::ensureIntermediateNodeEfficiency(IntermediateNode** inode
   }
 }
 
-}
+}// namespace Indexing

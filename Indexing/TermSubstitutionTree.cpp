@@ -257,7 +257,7 @@ struct TermSubstitutionTree::LDToTermQueryResultFn
 
 struct TermSubstitutionTree::LDToTermQueryResultWithSubstFn
 {
-  LDToTermQueryResultWithSubstFn(bool wc) : _withConstraints(wc)
+  explicit LDToTermQueryResultWithSubstFn(bool wc) : _withConstraints(wc)
   {
     _subst=RobSubstitutionSP(new RobSubstitution());
     _constraints=UnificationConstraintStackSP(new Stack<UnificationConstraint>());
@@ -410,4 +410,4 @@ TermQueryResultIterator TermSubstitutionTree::getAllUnifyingIterator(TermList tr
 }
 
 
-}
+}// namespace Indexing
