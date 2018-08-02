@@ -2,7 +2,7 @@ env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
-   - secure: "Mjy0lTGRa8sUi6YPWQJEo+BhWtA0U+36Br2lDh7xN9YYMgKZyJWC6+2lpDxq4GSqOnSETdLzXNwnewveebuQZX9U6WtHkcQWeLOwDq05IrdG5s8uhbq8C6To84di2Cnf0IIFUOhX08VvTwYa7ck4D+2QkfeiTVyssXjhbdr2GqlMaTG/cj9+IsWTNoIH3n/FZMzFkVynSK0qiqBNr0xCeUjOHh3qbgxxsJWMjGm9gp1CYze9oyJ7C3ZJehdFYjjTBlZ+ZxoNnh28jV7/m+c0F0RtHKLwxwNzjnYoyQBqJLi1fTbKqr16jtFBUxIOTHggMG52UY/lyrBOVw1vkmw9y1VG9PWpT+HxE8RM6q35NUkpQN5m6AL2D4C0vmW2rS6AhaX0tt6L9Maa3Y80Zm+0bSdjO9h14R+ICOQnAGV6BC2TFMgWWIH9cD4woBLihfVZtFCQvZA0MG8fZgh56lP67fU3ZrjnZcOTMlpJdfoz90VEdBu46sgomKH+HAjVfMapMG6pfdHPBIPL7/sBqTxtFrADxYzx00aLJfo22UW0rzMq6xsZU3rvucDjC0oD2BD6/JIWt02xixu3bAu8BuOdQNAoQZfznbYt1u+PDt1BVo8u0PVAPcnfdhBj08knR4BnKa1lRoZqOofT7X1H4kpaSqVELw8tKPPOfZPP1toBHQo="
+   - secure: "WzXFNJFNEGch9HkQdV9/1vQUS4cPDL6mOwMmMesQaOdIFtRRpL7bauLQBeF0hnbX1lLxo1GXIpLi8odbZt7vxbZrqE0/NheG9erPPJzRQNmDuJlwuN+wFvYeRR+mfNhSYZlsszb8d4jFbkT9dbKHFIzbLNFq1OB06jarhO9YDd8="
 
 
 language: cpp
@@ -19,10 +19,10 @@ addons:
   coverity_scan:
     project:
       name: "rsijiao0518/vampire-coverity"
-      description: "Vampire"
+      description: "coverity and travis IC"
     notification_email: 490436312@qq.com
     build_command_prepend: "./configure"
-    build_command:   "make"
+    build_command: "make"
 branch_pattern: coverity_scan
 
 
