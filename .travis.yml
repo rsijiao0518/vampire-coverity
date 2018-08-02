@@ -1,0 +1,29 @@
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "WzXFNJFNEGch9HkQdV9/1vQUS4cPDL6mOwMmMesQaOdIFtRRpL7bauLQBeF0hnbX1lLxo1GXIpLi8odbZt7vxbZrqE0/NheG9erPPJzRQNmDuJlwuN+wFvYeRR+mfNhSYZlsszb8d4jFbkT9dbKHFIzbLNFq1OB06jarhO9YDd8="
+
+
+language: cpp
+compiler:
+   - gcc
+   - clang
+   
+
+before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+      
+  coverity_scan:
+    project:
+      name: "rsijiao0518/vampire-coverity"
+      description: "coverity and travis IC"
+    notification_email: 490436312@qq.com
+    build_command_prepend: "make clean"
+    build_command: "make"
+branch_pattern: master
+
+
+script: make
