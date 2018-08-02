@@ -24,7 +24,7 @@
  */
 
 #include <utility>
-
+#include <iostream>
 #include "Shell/Options.hpp"
 
 #include "Kernel/Matcher.hpp"
@@ -40,10 +40,9 @@
 
 #include "TermSharing.hpp"
 
-#include <iostream>
+
 #if VDEBUG
 #include "Kernel/Signature.hpp"
-#include "Lib/Environment.hpp"
 #include "Lib/Int.hpp"
 
 vstring SingleTermListToString(const TermList* ts);
